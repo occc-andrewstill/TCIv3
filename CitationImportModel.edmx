@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="OdyClerkInternalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TCIv3_AgencyVendorInfo">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VendorAgencyId" Type="int" Nullable="false" />
+          <Property Name="CitationType" Type="varchar" MaxLength="50" />
+          <Property Name="VendorName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="AgencyName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ConnectionType" Type="varchar" MaxLength="50" />
+          <Property Name="ServerName" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ServerUserName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ServerPassword" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ServerPort" Type="int" />
+          <Property Name="LocalPath" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="RemotePath" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SSHKey" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="BCPFormatFile" Type="varchar" MaxLength="500" />
+          <Property Name="NodeID" Type="varchar" MaxLength="50" />
+          <Property Name="AgencyCode" Type="varchar" MaxLength="50" />
+          <Property Name="SLA" Type="int" />
+          <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+        </EntityType>
+        <Function Name="TCIv3_GetAgencyInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="OdyClerkInternalModelStoreContainer">
+          <EntitySet Name="TCIv3_AgencyVendorInfo" EntityType="Self.TCIv3_AgencyVendorInfo" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OdyClerkInternalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="OdyClerkInternalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TCIv3_AgencyVendorInfo" EntityType="OdyClerkInternalModel.TCIv3_AgencyVendorInfo" />
+          <FunctionImport Name="TCIv3_GetAgencyInfo" ReturnType="Collection(OdyClerkInternalModel.TCIv3_GetAgencyInfo_Result)" />
+        </EntityContainer>
+        <EntityType Name="TCIv3_AgencyVendorInfo">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VendorAgencyId" Type="Int32" Nullable="false" />
+          <Property Name="CitationType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VendorName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AgencyName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ConnectionType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ServerName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ServerUserName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ServerPassword" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ServerPort" Type="Int32" />
+          <Property Name="LocalPath" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RemotePath" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SSHKey" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="BCPFormatFile" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="NodeID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AgencyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SLA" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="7" />
+        </EntityType>
+        <ComplexType Name="TCIv3_GetAgencyInfo_Result">
+          <Property Type="Int32" Name="RecordId" Nullable="false" />
+          <Property Type="Int32" Name="VendorAgencyId" Nullable="false" />
+          <Property Type="String" Name="CitationType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="VendorName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="AgencyName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="ConnectionType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ServerName" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="ServerUserName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="ServerPassword" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="ServerPort" Nullable="true" />
+          <Property Type="String" Name="LocalPath" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="RemotePath" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="SSHKey" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+          <Property Type="Boolean" Name="Active" Nullable="true" />
+          <Property Type="String" Name="BCPFormatFile" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="NodeID" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AgencyCode" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="SLA" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OdyClerkInternalModelStoreContainer" CdmEntityContainer="OdyClerkInternalEntities">
+          <EntitySetMapping Name="TCIv3_AgencyVendorInfo">
+            <EntityTypeMapping TypeName="OdyClerkInternalModel.TCIv3_AgencyVendorInfo">
+              <MappingFragment StoreEntitySet="TCIv3_AgencyVendorInfo">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="SLA" ColumnName="SLA" />
+                <ScalarProperty Name="AgencyCode" ColumnName="AgencyCode" />
+                <ScalarProperty Name="NodeID" ColumnName="NodeID" />
+                <ScalarProperty Name="BCPFormatFile" ColumnName="BCPFormatFile" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SSHKey" ColumnName="SSHKey" />
+                <ScalarProperty Name="RemotePath" ColumnName="RemotePath" />
+                <ScalarProperty Name="LocalPath" ColumnName="LocalPath" />
+                <ScalarProperty Name="ServerPort" ColumnName="ServerPort" />
+                <ScalarProperty Name="ServerPassword" ColumnName="ServerPassword" />
+                <ScalarProperty Name="ServerUserName" ColumnName="ServerUserName" />
+                <ScalarProperty Name="ServerName" ColumnName="ServerName" />
+                <ScalarProperty Name="ConnectionType" ColumnName="ConnectionType" />
+                <ScalarProperty Name="AgencyName" ColumnName="AgencyName" />
+                <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+                <ScalarProperty Name="CitationType" ColumnName="CitationType" />
+                <ScalarProperty Name="VendorAgencyId" ColumnName="VendorAgencyId" />
+                <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="TCIv3_GetAgencyInfo" FunctionName="OdyClerkInternalModel.Store.TCIv3_GetAgencyInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OdyClerkInternalModel.TCIv3_GetAgencyInfo_Result">
+                <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+                <ScalarProperty Name="VendorAgencyId" ColumnName="VendorAgencyId" />
+                <ScalarProperty Name="CitationType" ColumnName="CitationType" />
+                <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+                <ScalarProperty Name="AgencyName" ColumnName="AgencyName" />
+                <ScalarProperty Name="ConnectionType" ColumnName="ConnectionType" />
+                <ScalarProperty Name="ServerName" ColumnName="ServerName" />
+                <ScalarProperty Name="ServerUserName" ColumnName="ServerUserName" />
+                <ScalarProperty Name="ServerPassword" ColumnName="ServerPassword" />
+                <ScalarProperty Name="ServerPort" ColumnName="ServerPort" />
+                <ScalarProperty Name="LocalPath" ColumnName="LocalPath" />
+                <ScalarProperty Name="RemotePath" ColumnName="RemotePath" />
+                <ScalarProperty Name="SSHKey" ColumnName="SSHKey" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="BCPFormatFile" ColumnName="BCPFormatFile" />
+                <ScalarProperty Name="NodeID" ColumnName="NodeID" />
+                <ScalarProperty Name="AgencyCode" ColumnName="AgencyCode" />
+                <ScalarProperty Name="SLA" ColumnName="SLA" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
